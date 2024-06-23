@@ -22,6 +22,13 @@ class _HomepageState extends State<Homepage> {
     setState(() {
       task.add([taskController.text]);
     });
+    Navigator.of(context).pop();
+  }
+
+  void delTask(int index) {
+    setState(() {
+      task.removeAt(index);
+    });
   }
 
   void onPressed() {
@@ -56,6 +63,9 @@ class _HomepageState extends State<Homepage> {
           return ItemTile(
             taskName: task[index][0],
             onPressed: onPressed,
+            delete: () {
+              delTask(index);
+            },
           );
         },
       ),

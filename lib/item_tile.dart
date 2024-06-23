@@ -3,8 +3,13 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ItemTile extends StatelessWidget {
   final void Function()? onPressed;
+  final void Function()? delete;
   final String taskName;
-  const ItemTile({super.key, required this.onPressed, required this.taskName});
+  const ItemTile(
+      {super.key,
+      required this.onPressed,
+      required this.taskName,
+      required this.delete});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +39,7 @@ class ItemTile extends StatelessWidget {
                 ),
                 IconButton(
                   color: const Color.fromARGB(255, 255, 255, 255),
-                  onPressed: onPressed,
+                  onPressed: delete,
                   icon: const Icon(Icons.delete),
                 ),
               ],
