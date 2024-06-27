@@ -29,6 +29,7 @@ class ItemTile extends StatelessWidget {
             style: GoogleFonts.robotoCondensed(
                 fontSize: 20, fontWeight: FontWeight.w600, color: Colors.white),
           ),
+          // ignore: avoid_unnecessary_containers
           Container(
             child: Row(
               children: [
